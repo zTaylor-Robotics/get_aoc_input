@@ -1,0 +1,3 @@
+C:/src/get_aoc_input/bin/CMakeFiles/get_input.dir
+C:/src/get_aoc_input/bin/CMakeFiles/edit_cache.dir
+C:/src/get_aoc_input/bin/CMakeFiles/rebuild_cache.dir

@@ -1,11 +1,5 @@
-cmake -S . -B bin -G "Ninja Multi-Config"
+cmake -S /get_aoc_input/ -B /get_aoc_input/bin -G "Ninja Multi-Config"
 
-cd bin
+ninja -f /get_aoc_input/bin/build-Release.ninja
 
-ninja -f build-Release.ninja
-
-cd Release
-
-ln -s ./get_input /usr/bin/get_input
-
-cd ../..
+ln -s /get_aoc_input/bin/Release/get_input /usr/bin/get_input
