@@ -1,9 +1,23 @@
 #include <iostream>
 #include <string>
 
+#include "version.h"
+
+void printVersion(){
+	printf("get_input v%d.%d.%d\n", MAJOR_VERSION, MINOR_VERSION, PATCH_VERSION);
+}
+
 int main(int argc, const char **argv){
-	if(argc <= 2){
+	std::ios_base::sync_with_stdio(false);
+    std::cin.tie(NULL);
+	if((argc > 1) && strcmp(argv[1], "--version")){
+		printVersion();
+		return 1;
+	}else if(argc <= 2){
 		std::cerr << "Error: Day and Year needed" << std::endl;
+		return 0;
+	}else if(argc > 3){
+		std::cerr << "Error: Too Many Arguments! Only <Day> and <Year> is needed!!!" << std::endl;
 		return 0;
 	}
 
