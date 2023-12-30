@@ -1,20 +1,21 @@
 #include <iostream>
 #include <string>
+#include <version.h>
 
-#include "version.h"
-
-void printVersion(){
-	printf("get_input v%d.%d.%d\n", MAJOR_VERSION, MINOR_VERSION, PATCH_VERSION);
+void print_version(){
+	printf("get_input version: %d.%d.%d\n", PROJECT_VERSION_MAJOR, PROJECT_VERSION_MINOR, PROJECT_VERSION_PATCH);
+	printf("Author: SH3P-Productions\n");
+	printf("Details: $get_input <day> <year> will store the Advent of Code\nprompt for the given day of the given year in a data.in file\n");
+	return;
 }
 
 int main(int argc, const char **argv){
-	std::ios_base::sync_with_stdio(false);
-    std::cin.tie(NULL);
-	if((argc > 1) && strcmp(argv[1], "--version")){
-		printVersion();
+	if(!strcmp(argv[1], "--version") || !strcmp(argv[1], "-v")){
+		print_version();
 		return 1;
-	}else if(argc <= 2){
-		std::cerr << "Error: Day and Year needed" << std::endl;
+	}
+	if(argc <= 2){
+		std::cerr << "Error: <Day> and <Year> needed" << std::endl;
 		return 0;
 	}else if(argc > 3){
 		std::cerr << "Error: Too Many Arguments! Only <Day> and <Year> is needed!!!" << std::endl;
