@@ -26,7 +26,7 @@ int main(int argc, const char **argv){
 	std::string day_num = argv[1];
 	std::string year_num = argv[2];
 	std::string geturl = "https://adventofcode.com/"+ year_num + "/day/" + day_num + "/input";
-	std::string cookies = "session=53616c7465645f5ff784101bd41356d91d49ec9622b01e9b562a7614dcd35d3e8d211536f5bd7e693af62f414e591a98a65f75c597e4e1e78b2e96d728242e2a;";
+	std::string cookies = "session=53616c7465645f5fd721f3bd8597f0d51d5c19c23cccd89b11ebcc9a7ec5e853ec93e063f6f526adaa04c599d56522b91c1d234ec68486742e72eb262c955b4d;";
 	std::string curl_command = "curl " + geturl + " --cookie \"" + cookies + "\"" + " -o data.in";
 
 	int result = system(curl_command.c_str());
